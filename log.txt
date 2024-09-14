@@ -1,0 +1,30 @@
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating authentification ... 
+Creating fastapi          ... 
+Creating authorization    ... 
+Creating content          ... 
+Creating authorization    ... done
+Creating content          ... done
+Creating fastapi          ... done
+Creating authentification ... done
+Attaching to authorization, content, fastapi, authentification
+[35mfastapi             |[0m INFO:     Started server process [8]
+[35mfastapi             |[0m INFO:     Waiting for application startup.
+[35mfastapi             |[0m INFO:     Application startup complete.
+[35mfastapi             |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[35mfastapi             |[0m INFO:     172.20.0.1:58852 - "GET / HTTP/1.1" 404 Not Found
+[35mfastapi             |[0m INFO:     172.20.0.1:58852 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[35mfastapi             |[0m INFO:     172.20.0.4:50502 - "GET /permissions?username=alice&password=wonderland HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.4:50512 - "GET /permissions?username=bob&password=builder HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.4:50514 - "GET /permissions?username=alice&password=clementine HTTP/1.1" 403 Forbidden
+[36mauthentification exited with code 0
+[0m[35mfastapi             |[0m INFO:     172.20.0.2:36068 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.2:36074 - "GET /v1/sentiment?username=bob&password=builder&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.2:36090 - "GET /v2/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[33mauthorization exited with code 0
+[0m[35mfastapi             |[0m INFO:     172.20.0.3:45144 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.3:45150 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=that+sucks HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.3:45162 - "GET /v2/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[35mfastapi             |[0m INFO:     172.20.0.3:45168 - "GET /v2/sentiment?username=alice&password=wonderland&sentence=that+sucks HTTP/1.1" 200 OK
+[32mcontent exited with code 0
+[0m

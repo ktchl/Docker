@@ -1,0 +1,19 @@
+Pour lancer mon projet:
+- Aller dans le dossier où se trouve setup.sh
+- chmod +x setup.sh
+- ./setup.sh
+
+Détails: 
+
+Pour créer mes 3 images de test, j'ai créé un dossier correspondant pour chacun où je vais générer mes images à partir du fichier Dockerfile
+Pour l'image de fastapi, j'ai pull directement.
+
+Pour lancer mes 4 containers j'ai utilisé le docker-compose.
+Avec le docker-compose: 
+Je lance d'abord le container fastapi
+Je lance ensuite le container authentification. Dans mon script python je laisse un délai de 10 secondes pour laisser le temps à fastapi de se lancer.
+Avec un délai de 10 seconde je lance le container authentification.
+Puis la même chose pour le dernier container content.
+J'ai monté un volume sur le dossier data. C'est à l'intérieur de celui-ci qu'on retrouvera mon fichier api_test.log qui contient le compte rendu de mes 3 containers de api_test.
+J'ai généré un fichier log.txt qui contient mes logs lorsque je lance la commande docker-compose up.
+Mes containers communiquent entre eux à travers le réseau "my_network_from_compose" que j'ai défini dans mon dokcer-compose.yml

@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  fastapi:
+    image: datascientest/fastapi:1.0.0  
+    container_name: fastapi
+    ports:
+      - "8000:8000"
+    networks:
+      - my_network_from_compose
+  authentification:
+    image: authentification  
+    container_name:  authentification
+    networks:
+      - my_network_from_compose
+    volumes:
+      - /home/ubuntu/exam_docker_TANCHALEUNE/data:/home/app
+  authorization:
+    image: authorization 
+    container_name:  authorization
+    networks:
+      - my_network_from_compose
+    volumes:
+      - /home/ubuntu/exam_docker_TANCHALEUNE/data:/home/app
+  content:
+    image: content 
+    container_name:  content
+    networks:
+      - my_network_from_compose
+    volumes:
+      - /home/ubuntu/exam_docker_TANCHALEUNE/data:/home/app
+
+networks:
+  my_network_from_compose:
+
